@@ -46,13 +46,12 @@ RUN apt-get update && \
  RUST_BACKTRACE=1 && \
 # build parity
 cd /build&&git clone https://github.com/EthereumCommonwealth/rust-callisto && \
-        cd parity && \
+        cd rust-callisto && \
 	git pull&& \
 	git checkout refs/heads/CLO/1.0 && \
         cargo build --verbose --release --features final && \
-        #ls /build/parity/target/release/parity && \
-        strip /build/parity/target/release/parity && \
- file /build/parity/target/release/parity&&mkdir -p /parity&& cp /build/parity/target/release/parity /parity&&\
+        strip /build/rust-callisto/target/release/parity && \
+        file /build/rust-callisto/target/release/parity&&mkdir -p /parity&& cp /build/rust-callisto/target/release/parity /parity&&\
 #cleanup Docker image
  rm -rf /root/.cargo&&rm -rf /root/.multirust&&rm -rf /root/.rustup&&rm -rf /build&&\
  apt-get purge -y  \
