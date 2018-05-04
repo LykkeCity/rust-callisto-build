@@ -75,5 +75,5 @@ cd /build&&git clone https://github.com/EthereumCommonwealth/rust-callisto && \
         cmake llvm-3.7-dev&&\
  rm -rf /var/lib/apt/lists/*
 # setup ENTRYPOINT
-EXPOSE 8080 8545 8180 30303
+EXPOSE 8180 8545 8546 30303 30303/udp
 ENTRYPOINT ["/parity/parity"]
